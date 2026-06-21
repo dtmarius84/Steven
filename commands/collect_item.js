@@ -2,7 +2,7 @@ const mineflayer = require('mineflayer')
 const { goals: {  GoalBlock } }= require('mineflayer-pathfinder')
 const { Vec3 } = require('vec3');
 
-const { lookatEntity } = require('/Codes/mc_bot/index');
+const { lookatEntity } = require('../index');
 
 async function collectWood(bot, username, message, defaultMove) {
     bot.removeListener('physicsTick', lookatEntity);
@@ -50,7 +50,7 @@ async function collectWood(bot, username, message, defaultMove) {
     }
     bot.on('physicsTick', lookatEntity);
     bot.chat(`i got ${number} blocks of wood for ${username}`);
-    return console.log(`shiina has collected ${number} wood for '${username}'`)
+    return console.log(`steven has collected ${number} wood for '${username}'`)
 }
 
 module.exports = { collectWood }
