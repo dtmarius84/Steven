@@ -51,10 +51,10 @@ function lookatPlayer() {
 }
 module.exports = { lookatPlayer, lookatEntity };
 
-const { follow } = require('./commands-mcbot/follow'); //check if works and do rest
-const { stopFollow } = require('./commands-mcbot/stopfollow')
-const { collectWood } = require('./commands-mcbot/collect_item')
-const { sleep } = require('./commands-mcbot/sleep')
+const { follow } = require('./commands/follow'); //check if works and do rest
+const { stopFollow } = require('./commands/stopfollow')
+const { collectWood } = require('./commands/collect_item')
+const { sleep } = require('./commands/sleep')
 
 bot.on('death', () =>{
     bot.respawn();
