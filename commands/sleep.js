@@ -2,7 +2,7 @@ const mineflayer = require('mineflayer')
 const { goals: { GoalNear } }= require('mineflayer-pathfinder')
 const { Vec3 } = require('vec3');
 
-const { lookatEntity } = require('/Codes/mc_bot/index');
+const { lookatEntity } = require('../index');
 
 async function sleep(bot, defaultMove) {
     bot.removeListener('physicsTick', lookatEntity);
@@ -29,7 +29,7 @@ async function sleep(bot, defaultMove) {
     try {
         await bot.sleep(block);
         bot.chat('going to sleep');
-        console.log('shiina is sleeping');
+        console.log('steven is sleeping');
     } catch (err) {
         console.error(`Failed to sleep: ${err}`);
         bot.chat('could not sleep on the bed');
