@@ -7,7 +7,7 @@ const { pathfinder, Movements, goals: { GoalNear, GoalBlock } }= require('minefl
 const pvp = require('mineflayer-pvp').plugin;
 const { Vec3 } = require('vec3');
 const { MongoClient } = require('mongodb');
-require('dotenv').config({path: './dc_bots/shiina/.env'});
+require('dotenv').config({path: './dc_bots/echo/.env'});
 
 //const foodlist = []
 
@@ -19,7 +19,7 @@ const bot = mineflayer.createBot({
     host: 'localhost', //minecraft server 
     port: 56160,
     //auth: 'microsoft',
-    username: "shiina",
+    username: "Steven",
     version: '1.21.1'
 })
 
@@ -29,7 +29,7 @@ bot.loadPlugin(pvp);
 bot.on('login', () => {
     bot.chat("/trigger tpa add 1");
     let botSocket = bot._client.socket;
-    console.log(`shiina logged in to ${botSocket.server ? botSocket.server : botSocket._host}`);
+    console.log(`steven logged in to ${botSocket.server ? botSocket.server : botSocket._host}`);
 });
 
 bot.on('end', () => {
@@ -58,7 +58,7 @@ const { sleep } = require('./commands-mcbot/sleep')
 
 bot.on('death', () =>{
     bot.respawn();
-    return console.log('shiina respawned');
+    return console.log('steven respawned');
 })
 
 bot.on('spawn', () => {
@@ -107,7 +107,7 @@ bot.on('spawn', () => {
 
             const target = bot.nearestEntity(filter);
             bot.pvp.attack(target)
-            console.log(`shiina is attacking ${target.username || target.mobType}`);
+            console.log(`steven is attacking ${target.username || target.mobType}`);
             ping = 0;
         }
 
@@ -175,7 +175,7 @@ bot.on('spawn', () => {
             }
         }
 
-        if (message.toLowerCase().includes('shiina')) { //chat reply
+        if (message.toLowerCase().includes('steven')) { //chat reply
             try {
                 await dbclient.connect();
                 const dbmessages = db.collection('messages');
