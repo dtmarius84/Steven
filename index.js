@@ -17,7 +17,7 @@ const db = dbclient.db('channels');
 
 const bot = mineflayer.createBot({
     host: 'localhost', //minecraft server 
-    port: 56160,
+    port:
     //auth: 'microsoft',
     username: "Steven",
     version: '1.21.1'
